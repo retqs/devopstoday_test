@@ -5,9 +5,7 @@ interface IProps {
   data: IComment;
 }
 
-const Comment: React.FC<IProps> = ({ data }): JSX.Element => {
-  return <CommentBox>{data.body}</CommentBox>;
-};
+const Comment: React.FC<IProps> = ({ data }): JSX.Element => <CommentBox>{data.body}</CommentBox>;
 
 const CommentBox = styled.div`
   border: 1px solid #ccc;

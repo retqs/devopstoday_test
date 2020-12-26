@@ -7,18 +7,16 @@ interface IProps {
   data: IPost;
 }
 
-const Post: React.FC<IProps> = ({ data }): JSX.Element => {
-  return (
-    <PostComponent>
-      <PostTitle>
-        <Link href="/posts/[postId]" as={`/posts/${data.id}`}>
-          <a>{data.title}</a>
-        </Link>
-      </PostTitle>
-      <PostDescription>{data.body}</PostDescription>
-    </PostComponent>
-  );
-};
+const Post: React.FC<IProps> = ({ data }): JSX.Element => (
+  <PostComponent>
+    <PostTitle>
+      <Link href="/posts/[postId]" as={`/posts/${data.id}`}>
+        <a>{data.title}</a>
+      </Link>
+    </PostTitle>
+    <PostDescription>{data.body}</PostDescription>
+  </PostComponent>
+);
 
 const PostComponent = styled.li`
   min-width: 320px;
