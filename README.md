@@ -1,4 +1,5 @@
 # devopstoday_test
+
 # List of Available Commands
 - npm run dev         // to start project in Dev mode
 - npm run build       // to build project
@@ -13,6 +14,8 @@
 to Run in dev mode 
 
 - npm run dev
+
 or
+
 - npm run build:prod // to create Prod mode
 - npm run start      // to start that build
