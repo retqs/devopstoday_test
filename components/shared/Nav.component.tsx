@@ -1,7 +1,7 @@
-import * as colors from '../../public/styles';
-
-import Link from 'next/link';
 import styled from 'styled-components';
+import Link from 'next/link';
+
+import * as colors from '../../public/styles';
 
 export function Nav(): JSX.Element {
   return (

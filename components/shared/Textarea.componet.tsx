@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { IInputProps } from '../../types';
 import { lPurple } from '../../public/styles';
 
-export const Textarea: React.FC<IInputProps> = (props): JSX.Element => {
-  return <CustomTextarea {...props} />;
-};
+export const Textarea: React.FC<IInputProps> = (props): JSX.Element => (
+  <CustomTextarea {...props} />
+);
 
 const CustomTextarea = styled.textarea`
   width: 100%;

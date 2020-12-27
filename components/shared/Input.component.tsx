@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { IInputProps } from '../../types';
 import { lPurple } from '../../public/styles';
 
-export const Input: React.FC<IInputProps> = (props): JSX.Element => {
-  return <CustomInput spellCheck="false" autoComplete="off" {...props} />;
-};
+export const Input: React.FC<IInputProps> = (props): JSX.Element => (
+  <CustomInput spellCheck="false" autoComplete="off" {...props} />
+);
 
 const CustomInput = styled.input`
   width: 100%;
