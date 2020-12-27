@@ -1,6 +1,8 @@
 import { IAction, IPostsReducer } from '../../types';
 import { actionTypes } from '../actions';
 
+// isLoading,error relates to the previous solution
+// now only data is being used
 const initialState = {
   isLoading: false,
   data: [],

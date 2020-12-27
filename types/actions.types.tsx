@@ -4,7 +4,6 @@ import { IRootReducer } from './';
 
 export interface IAction<P = unknown> {
   type: string;
-  http?: string;
   payload?: P;
 }
 

@@ -17,11 +17,10 @@ export const createPost = (newPost: IPost) => async (dispatch: IDispatch): Promi
 
     dispatch(requestCreatePost);
     window.history.back();
-  } catch (error) {
-    dispatch({
-      type: actionTypes.SET_ERROR_REQUEST_POST,
-      payload: 'Something went wrong while creating post',
-    });
+  } catch {
+    const createError = createAction(actionTypes.REQUEST_CREATE_POST);
+    const requestError = createError('Something went wrong while creating post');
+    dispatch(requestError);
   }
 };
 
