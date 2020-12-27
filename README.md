@@ -9,7 +9,9 @@
 
 # To Run Project
 - npm run i // install all depenends
+
 to Run in dev mode 
+
 - npm run dev
 or
 - npm run build:prod // to create Prod mode
