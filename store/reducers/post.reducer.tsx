@@ -1,5 +1,4 @@
 import { IAction, IPostsReducer } from '../../types';
-
 import { actionTypes } from '../actions';
 
 const initialState = {
@@ -16,7 +15,6 @@ export default function postReducer(
     case actionTypes.REQUEST_LATEST_POSTS:
       return {
         ...state,
-        // isLoading: true,
         data: payload,
       };
 
@@ -31,6 +29,8 @@ export default function postReducer(
   }
 }
 
+// prev solution
+// isLoading: true,
 // case actionTypes.SET_LATEST_POSTS:
 //   return {
 //     ...state,

@@ -1,5 +1,4 @@
 import { Loader, Nav } from '../components/shared';
-
 import { Container } from '../public/styles';
 
 interface ILoaderProps {
@@ -7,11 +6,9 @@ interface ILoaderProps {
   isLoading: boolean;
 }
 
-export const WithLoaderContainer = ({ children, isLoading }: ILoaderProps): JSX.Element => {
-  return (
-    <>
-      <Nav></Nav>
-      <Container>{isLoading ? <Loader></Loader> : children}</Container>
-    </>
-  );
-};
+export const WithLoaderContainer = ({ children, isLoading }: ILoaderProps): JSX.Element => (
+  <>
+    <Nav></Nav>
+    <Container>{isLoading ? <Loader /> : children}</Container>
+  </>
+);

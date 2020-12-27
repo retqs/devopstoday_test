@@ -1,7 +1,7 @@
 import { IAction, IDispatch, IPost } from '../../types';
-
 import { actionTypes } from './actionTypes';
 import api from '../../api';
+import { createAction } from '../../utils';
 
 export const requestPosts = (): IAction => ({
   type: actionTypes.REQUEST_LATEST_POSTS,
@@ -11,13 +11,11 @@ export const createPost = (newPost: IPost) => async (dispatch: IDispatch): Promi
   const data = JSON.stringify(newPost);
 
   try {
-    const res = await api.post(`/posts`, data);
+    const result = await api.post(`/posts`, data);
+    const createPost = createAction(actionTypes.REQUEST_CREATE_POST);
+    const requestCreatePost = createPost(result.data);
 
-    dispatch({
-      type: actionTypes.REQUEST_CREATE_POST,
-      payload: res.data,
-    });
-
+    dispatch(requestCreatePost);
     window.history.back();
   } catch (error) {
     dispatch({
@@ -27,6 +25,7 @@ export const createPost = (newPost: IPost) => async (dispatch: IDispatch): Promi
   }
 };
 
+// below is the code that was used before
 // export const requestLatestPosts = (url: string) => async (dispatch: IDispatch) => {
 //   try {
 //     const res = await api.get(url);

@@ -1,13 +1,14 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+
 import { BASE_URL } from '../api';
 import { IPost } from '../types';
 import Post from '../components/posts/Post.component';
-import React from 'react';
 import { WithLoaderContainer } from '../hocs';
 import { getPostsReducer } from '../store/selectors';
 import { requestPosts } from '../store/actions';
-import styled from 'styled-components';
 import { useFetch } from '../hooks';
-import { useSelector } from 'react-redux';
 
 function LatestPosts(): JSX.Element {
   const { data } = useSelector(getPostsReducer);
@@ -17,7 +18,7 @@ function LatestPosts(): JSX.Element {
   const renderPostsList = (posts: IPost[]) => {
     if (posts.length === 0) return <h2>No Available Posts at the moment</h2>;
 
-    return posts.map((post: IPost) => <Post key={post.id} data={post}></Post>);
+    return posts.map((post: IPost) => <Post key={post.id} data={post} />);
   };
 
   if (error) return <h2>{error}</h2>;

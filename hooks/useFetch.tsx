@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { IAction } from '../types';
 import api from '../api';
-import { useDispatch } from 'react-redux';
 
 interface IUseFetch {
   isLoading: boolean;
@@ -19,9 +19,9 @@ export const useFetch = (url: string, cb: () => IAction): IUseFetch => {
   useEffect(() => {
     (async function () {
       try {
-        const res = await api.get(url);
+        const result = await api.get(url);
 
-        action.payload = res.data;
+        action.payload = result.data;
 
         dispatch(action);
       } catch (error) {

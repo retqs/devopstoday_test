@@ -1,9 +1,10 @@
-import { IInputProps } from '../../types';
-import { lPurple } from '../../public/styles';
 import styled from 'styled-components';
 
+import { IInputProps } from '../../types';
+import { lPurple } from '../../public/styles';
+
 export const Input: React.FC<IInputProps> = (props): JSX.Element => {
-  return <CustomInput spellCheck="false" autoComplete="off" {...props}></CustomInput>;
+  return <CustomInput spellCheck="false" autoComplete="off" {...props} />;
 };
 
 const CustomInput = styled.input`

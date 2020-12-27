@@ -1,5 +1,6 @@
-import { IComment } from '../../types';
 import styled from 'styled-components';
+
+import { IComment } from '../../types';
 
 interface IProps {
   data: IComment;

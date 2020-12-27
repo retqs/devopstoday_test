@@ -1,7 +1,8 @@
-import { IPost } from '../../types';
-import Link from 'next/link';
-import { purple } from '../../public/styles';
 import styled from 'styled-components';
+import Link from 'next/link';
+
+import { IPost } from '../../types';
+import { purple } from '../../public/styles';
 
 interface IProps {
   data: IPost;

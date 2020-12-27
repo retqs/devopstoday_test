@@ -1,5 +1,6 @@
-import { IRootReducer } from './';
 import { ThunkDispatch } from 'redux-thunk';
+
+import { IRootReducer } from './';
 
 export interface IAction<P = unknown> {
   type: string;

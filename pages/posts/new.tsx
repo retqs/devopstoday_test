@@ -1,12 +1,12 @@
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
+import { useCallback } from 'react';
+
 import { Button, lPurple } from '../../public/styles';
 import { Input, Textarea } from '../../components/shared';
-
 import { IPost } from '../../types';
 import { WithLoaderContainer } from '../../hocs';
 import { createPost } from '../../store/actions';
-import styled from 'styled-components';
-import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 import { useEdit } from '../../hooks';
 
 function CreateNewPostPage(): JSX.Element {
@@ -31,11 +31,11 @@ function CreateNewPostPage(): JSX.Element {
       <Form onSubmit={handleSubmit}>
         <FormField>
           <Label htmlFor="title">Title:</Label>
-          <Input id="title" name="title" value={data.title} onChange={handleChange}></Input>
+          <Input id="title" name="title" value={data.title} onChange={handleChange} />
         </FormField>
         <FormField>
           <Label htmlFor="body">Body:</Label>
-          <Textarea id="body" name="body" value={data.body} onChange={handleChange}></Textarea>
+          <Textarea id="body" name="body" value={data.body} onChange={handleChange} />
         </FormField>
         <SubmitBtn type="submit">Add New Post</SubmitBtn>
       </Form>

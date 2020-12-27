@@ -1,8 +1,8 @@
-import { IDispatch, IRootReducer } from '../types';
 import { applyMiddleware, compose, createStore } from 'redux';
-
-import rootReducer from './reducers';
 import thunk from 'redux-thunk';
+
+import { IDispatch, IRootReducer } from '../types';
+import rootReducer from './reducers';
 
 interface IReduxApi {
   state: IRootReducer;

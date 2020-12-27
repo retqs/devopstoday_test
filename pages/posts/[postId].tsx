@@ -1,10 +1,10 @@
-import { IComment, IPost } from '../../types';
-
-import Comment from '../../components/posts/Comment.component';
-import { GetServerSideProps } from 'next';
-import { WithLoaderContainer } from '../../hocs';
-import api from '../../api';
 import styled from 'styled-components';
+import { GetServerSideProps } from 'next';
+
+import api from '../../api';
+import { IComment, IPost } from '../../types';
+import { WithLoaderContainer } from '../../hocs';
+import Comment from '../../components/posts/Comment.component';
 
 interface IPostProps {
   post: IPost;
@@ -35,7 +35,7 @@ function PostDetail({ post, error }: IPostProps): JSX.Element {
   const renderCommentsList = (comments: IComment[]) => {
     if (comments.length === 0) return <h2>No Comments at the moment</h2>;
 
-    return comments.map((comment: IComment) => <Comment key={comment.id} data={comment}></Comment>);
+    return comments.map((comment: IComment) => <Comment key={comment.id} data={comment} />);
   };
 
   if (error) return <h2>{error}</h2>;

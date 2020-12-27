@@ -1,8 +1,9 @@
 import { AppProps } from 'next/app';
-import { GlobalStyles } from '../public/styles';
+import { createWrapper } from 'next-redux-wrapper';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
-import { createWrapper } from 'next-redux-wrapper';
+
+import { GlobalStyles } from '../public/styles';
 import store from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -16,9 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <GlobalStyles></GlobalStyles>
+      <GlobalStyles />
       <Provider store={store}>
-        <Component {...pageProps}></Component>
+        <Component {...pageProps} />
       </Provider>
     </>
   );
